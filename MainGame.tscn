@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cxk48wh8f4whr"]
+
+[ext_resource type="FontFile" uid="uid://gk76rn4w7uc0" path="res://main/assets/sprites/xilosa_.ttf" id="1_3tbxw"]
+[ext_resource type="Texture2D" uid="uid://nwne6kglnny2" path="res://main/assets/sprites/life.png" id="2_e3m3f"]
+
+[node name="Node2D" type="Node2D" unique_id=94260682]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=573417151]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=749559446]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_bottom = 47.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_3tbxw")
+theme_override_font_sizes/font_size = 44
+text = "2192"
+
+[node name="Message" type="Label" parent="HUD" unique_id=231757738]
+offset_left = 189.0
+offset_top = 32.0
+offset_right = 229.0
+offset_bottom = 55.0
+
+[node name="StartButton" type="Button" parent="HUD" unique_id=1421309314]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MessageTimer" type="Timer" parent="HUD" unique_id=355826847]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=577472865]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer" unique_id=1498665335]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HBoxContainer/TextureRect" unique_id=534666913]
+position = Vector2(26, 22)
+scale = Vector2(0.34302327, 0.34302327)
+texture = ExtResource("2_e3m3f")
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/HBoxContainer" unique_id=972785435]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HBoxContainer/TextureRect2" unique_id=1823462421]
+position = Vector2(26, 22)
+scale = Vector2(0.34302327, 0.34302327)
+texture = ExtResource("2_e3m3f")
+
+[node name="TextureRect3" type="TextureRect" parent="HUD/HBoxContainer" unique_id=694791151]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HBoxContainer/TextureRect3" unique_id=859761795]
+position = Vector2(26, 22)
+scale = Vector2(0.34302327, 0.34302327)
+texture = ExtResource("2_e3m3f")
+
+[node name="TextureRect4" type="TextureRect" parent="HUD/HBoxContainer" unique_id=554956414]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HBoxContainer/TextureRect4" unique_id=2062492387]
+position = Vector2(26, 22)
+scale = Vector2(0.34302327, 0.34302327)
+texture = ExtResource("2_e3m3f")

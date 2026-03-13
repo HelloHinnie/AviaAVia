@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bqc1n1brkux2g"]
+
+[ext_resource type="Script" uid="uid://brrmh04gya04c" path="res://games/aperte_os_cintos/aperte_os_cintos.gd" id="1_w4dmw"]
+[ext_resource type="PackedScene" uid="uid://b7pwcou3s8cv" path="res://games/aperte_os_cintos/Cinto.tscn" id="2_u6mev"]
+
+[node name="Node2D" type="Node2D" unique_id=600538075]
+script = ExtResource("1_w4dmw")
+
+[node name="Line2D" parent="." unique_id=1607024498 instance=ExtResource("2_u6mev")]
+position = Vector2(407, 171)
