@@ -13,6 +13,11 @@ config_version=5
 config/name="Avia a Via"
 config/features=PackedStringArray("4.6", "Mobile")
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [input]
 
 Mouse1={

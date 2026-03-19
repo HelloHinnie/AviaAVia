@@ -8,9 +8,10 @@
 script = ExtResource("1_w4dmw")
 
 [node name="Bancos" type="Sprite2D" parent="." unique_id=1896840322]
-position = Vector2(575.99994, 328.5)
-scale = Vector2(0.41594198, 0.43550533)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.46376806, 0.47872344)
 texture = ExtResource("2_hkua4")
 
-[node name="Line2D" parent="." unique_id=1607024498 instance=ExtResource("2_u6mev")]
-position = Vector2(128, 221)
+[node name="Cinto" parent="." unique_id=1607024498 instance=ExtResource("2_u6mev")]
+Pa_Position = Vector2(136, 232)
+Pe_Position = Vector2(544, 680)
