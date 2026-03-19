@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://bqc1n1brkux2g"]
 
 [ext_resource type="Script" uid="uid://brrmh04gya04c" path="res://games/aperte_os_cintos/aperte_os_cintos.gd" id="1_w4dmw"]
+[ext_resource type="Texture2D" uid="uid://rx11w87j3iyr" path="res://bancos.png" id="2_hkua4"]
 [ext_resource type="PackedScene" uid="uid://b7pwcou3s8cv" path="res://games/aperte_os_cintos/Cinto.tscn" id="2_u6mev"]
 
 [node name="Node2D" type="Node2D" unique_id=600538075]
 script = ExtResource("1_w4dmw")
 
+[node name="Bancos" type="Sprite2D" parent="." unique_id=1896840322]
+position = Vector2(575.99994, 328.5)
+scale = Vector2(0.41594198, 0.43550533)
+texture = ExtResource("2_hkua4")
+
 [node name="Line2D" parent="." unique_id=1607024498 instance=ExtResource("2_u6mev")]
-position = Vector2(407, 171)
+position = Vector2(128, 221)
