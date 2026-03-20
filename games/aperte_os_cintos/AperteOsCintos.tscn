@@ -14,4 +14,22 @@ texture = ExtResource("2_hkua4")
 
 [node name="Cinto" parent="." unique_id=1607024498 instance=ExtResource("2_u6mev")]
 Pa_Position = Vector2(136, 232)
-Pe_Position = Vector2(544, 680)
+Pe_Position = Vector2(544, 700)
+
+[node name="Cinto2" parent="." unique_id=2079980448 instance=ExtResource("2_u6mev")]
+Pa_Position = Vector2(1185, 232)
+Pe_Position = Vector2(773, 700)
+orientation = true
+
+[node name="Cinto3" parent="." unique_id=1194817451 instance=ExtResource("2_u6mev")]
+scale = Vector2(0.8, 0.8)
+Pa_Position = Vector2(425, 160)
+Pe_Position = Vector2(604, 381)
+
+[node name="Cinto4" parent="." unique_id=493101923 instance=ExtResource("2_u6mev")]
+Pa_Position = Vector2(136, 232)
+Pe_Position = Vector2(544, 700)
+
+[node name="Cinto5" parent="." unique_id=2087257679 instance=ExtResource("2_u6mev")]
+Pa_Position = Vector2(136, 232)
+Pe_Position = Vector2(544, 700)
