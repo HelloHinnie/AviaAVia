@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6rbpmrklfc5v"
-path="res://.godot/imported/presilha.png-6c7d006a0fb323e8e4d06a581386686c.ctex"
+uid="uid://xsjv8h2iysj7"
+path="res://.godot/imported/path76.png-bf7b4c95a76988eae96bf15de9269599.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://presilha.png"
-dest_files=["res://.godot/imported/presilha.png-6c7d006a0fb323e8e4d06a581386686c.ctex"]
+source_file="res://main/UI/TransitionPage/assets/path76.png"
+dest_files=["res://.godot/imported/path76.png-bf7b4c95a76988eae96bf15de9269599.ctex"]
 
 [params]
 

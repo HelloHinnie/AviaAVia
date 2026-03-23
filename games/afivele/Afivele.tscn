@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://8vqkae37nmvb"]
+
+[ext_resource type="Texture2D" uid="uid://dxjpgtvp3y3vd" path="res://main/assets/sprites/path10.png" id="1_jfbc3"]
+
+[sub_resource type="Curve2D" id="Curve2D_hahkm"]
+_data = {
+"points": PackedVector2Array(0, -126.96085, 0, 126.96085, 1092.0681, -240.60498, 111.956085, -35.310177, -111.956085, 35.310177, 836.06805, 15.39502, 87.903824, 30.803902, -87.903824, -30.803902, 452.06805, 15.39502, 0.75131476, 126.996506, -0.75131476, -126.996506, 196.06805, -240.60498)
+}
+point_count = 4
+
+[node name="Afivele" type="Node2D" unique_id=1103309166]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2105314961]
+position = Vector2(-8, 560)
+scale = Vector2(1.0045402, 0.9978476)
+curve = SubResource("Curve2D_hahkm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=105954107]
+position = Vector2(1092.0681, -240.60498)
+rotation = 1.5707964
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=740418648]
+position = Vector2(0.087265015, 1.0217209)
+rotation = 4.6984262
+scale = Vector2(0.3854028, 0.49010113)
+texture = ExtResource("1_jfbc3")

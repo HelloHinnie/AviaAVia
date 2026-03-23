@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jsy7fm4g4xii"
-path="res://.godot/imported/path62.svg-ce64d1a754b067444d567cbcb262b59a.ctex"
+uid="uid://rx11w87j3iyr"
+path="res://.godot/imported/bancos.png-6a5a49372d8f31b074c71bff6c3ccbb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/UI/TransitionPage/assets/path62.svg"
-dest_files=["res://.godot/imported/path62.svg-ce64d1a754b067444d567cbcb262b59a.ctex"]
+source_file="res://main/UI/TransitionPage/assets/bancos.png"
+dest_files=["res://.godot/imported/bancos.png-6a5a49372d8f31b074c71bff6c3ccbb5.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

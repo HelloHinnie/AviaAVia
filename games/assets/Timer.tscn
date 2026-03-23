@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cdorfoxhvx5lq"]
+
+[node name="Timer" type="Node2D" unique_id=2017789720]
+
+[node name="Timer" type="Timer" parent="." unique_id=1879518149]

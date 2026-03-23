@@ -15,12 +15,6 @@ func _ready() -> void:
 	start_position = cinto.Pa_Position
 	cinto_presilha.global_position = cinto.Pe_Position
 	global_position = start_position
-	cinto.width = 20
-	cinto.antialiased = true
-	cinto.begin_cap_mode = 2
-	if cinto.orientation: 
-		scale = Vector2(-1,1)
-		cinto_presilha.scale = Vector2(-1,1)
 	cinto.set_point_position(0, global_position)
 	cinto.set_point_position(1, global_position)
 
@@ -44,8 +38,9 @@ func _input(event: InputEvent) -> void:
 func _on_cinto_presilha_area_entered(area: Area2D) -> void:
 	if area == self:
 		travado = true
+		cinto.Locked = true
 		dragging = false
-		if cinto.orientation:
+		if cinto.Tamanho.x < 0:
 			global_position = cinto_presilha.global_position - Vector2(-15, 17)
 		else:
 			global_position = cinto_presilha.global_position - Vector2(15, 17)

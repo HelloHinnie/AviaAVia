@@ -13,7 +13,10 @@ size = Vector2(41, 53)
 
 [node name="Cinto" type="Line2D" unique_id=1607024498]
 points = PackedVector2Array(0, 0, 0, 0)
+width = 20.0
 default_color = Color(0, 0, 0, 1)
+begin_cap_mode = 2
+antialiased = true
 script = ExtResource("1_goy7l")
 
 [node name="Cinto_Passador" type="Area2D" parent="." unique_id=93260961 node_paths=PackedStringArray("cinto")]
@@ -43,6 +46,4 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_3aqqk")
 
 [connection signal="input_event" from="Cinto_Passador" to="Cinto_Passador" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Cinto_Passador" to="Cinto_Passador" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Cinto_Passador" to="Cinto_Passador" method="_on_mouse_exited"]
 [connection signal="area_entered" from="Cinto_Presilha" to="Cinto_Passador" method="_on_cinto_presilha_area_entered"]

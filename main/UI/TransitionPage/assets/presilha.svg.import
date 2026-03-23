@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rx11w87j3iyr"
-path="res://.godot/imported/bancos.png-bf776192c91f5bbf71140e969f8c3bcc.ctex"
+uid="uid://p5w2yhe7dwjk"
+path="res://.godot/imported/presilha.svg-9350ed733da9b859f30ed111b5d2ee1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bancos.png"
-dest_files=["res://.godot/imported/bancos.png-bf776192c91f5bbf71140e969f8c3bcc.ctex"]
+source_file="res://main/UI/TransitionPage/assets/presilha.svg"
+dest_files=["res://.godot/imported/presilha.svg-9350ed733da9b859f30ed111b5d2ee1b.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

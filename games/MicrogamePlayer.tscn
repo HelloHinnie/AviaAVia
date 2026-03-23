@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cxk48wh8f4whr"]
+
+[ext_resource type="FontFile" uid="uid://gk76rn4w7uc0" path="res://main/assets/sprites/xilosa_.ttf" id="1_lyknm"]
+[ext_resource type="Script" uid="uid://cnnqxwnk0hkbb" path="res://games/microgame_player.gd" id="1_op8ap"]
+
+[node name="Node2D" type="Node2D" unique_id=94260682]
+script = ExtResource("1_op8ap")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=573417151]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=749559446]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_bottom = 47.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_lyknm")
+theme_override_font_sizes/font_size = 44
+text = "2192"
