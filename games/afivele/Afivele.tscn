@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://8vqkae37nmvb"]
 
+[ext_resource type="Script" uid="uid://d1sptw23pp2re" path="res://games/afivele/afivele.gd" id="1_hahkm"]
 [ext_resource type="Texture2D" uid="uid://dxjpgtvp3y3vd" path="res://main/assets/sprites/path10.png" id="1_jfbc3"]
+[ext_resource type="Script" uid="uid://bsewkryt0w7cb" path="res://games/afivele/path_2d.gd" id="2_abmxd"]
 
 [sub_resource type="Curve2D" id="Curve2D_hahkm"]
 _data = {
@@ -9,11 +11,13 @@ _data = {
 point_count = 4
 
 [node name="Afivele" type="Node2D" unique_id=1103309166]
+script = ExtResource("1_hahkm")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=2105314961]
 position = Vector2(-8, 560)
 scale = Vector2(1.0045402, 0.9978476)
 curve = SubResource("Curve2D_hahkm")
+script = ExtResource("2_abmxd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=105954107]
 position = Vector2(1092.0681, -240.60498)
