@@ -13,6 +13,10 @@ config_version=5
 config/name="Avia a Via"
 config/features=PackedStringArray("4.6", "Mobile")
 
+[autoload]
+
+GlobalScene="*uid://dn8cx0rlurcv5"
+
 [display]
 
 window/size/viewport_width=1280

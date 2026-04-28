@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8k05w27va0f"
-path="res://.godot/imported/rect1.svg-1a20562ece7b0a48c62bed8b53c299fd.ctex"
+uid="uid://dedy4db36e8vo"
+path="res://.godot/imported/ezgif-frame-011.jpg-b31946c7c5cf81fbd8d48e86ecba2616.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/UI/TransitionPage/assets/rect1.svg"
-dest_files=["res://.godot/imported/rect1.svg-1a20562ece7b0a48c62bed8b53c299fd.ctex"]
+source_file="res://assets/TransitionPaper/ezgif-frame-011.jpg"
+dest_files=["res://.godot/imported/ezgif-frame-011.jpg-b31946c7c5cf81fbd8d48e86ecba2616.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

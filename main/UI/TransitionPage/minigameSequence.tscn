@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dbr3sk8j55ynj"]
+
+[ext_resource type="Script" uid="uid://mt0jdns6x2ed" path="res://main/UI/TransitionPage/minigame_sequence.gd" id="1_c86ia"]
+[ext_resource type="FontFile" uid="uid://gk76rn4w7uc0" path="res://main/assets/sprites/xilosa_.ttf" id="2_lqagx"]
+[ext_resource type="Texture2D" uid="uid://n55xmt87k010" path="res://assets/path10.png" id="3_ggk07"]
+[ext_resource type="Script" uid="uid://btlwogyag4poj" path="res://main/UI/TransitionPage/rotate_icon.gd" id="4_8vovd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87mt6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ggk07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MinigameSequence" type="Node2D" unique_id=921504306]
+script = ExtResource("1_c86ia")
+
+[node name="Text Layer" type="CanvasLayer" parent="." unique_id=1140489234]
+
+[node name="titleText" type="RichTextLabel" parent="Text Layer" unique_id=83006558]
+clip_contents = false
+offset_right = 1280.0
+offset_bottom = 720.0
+pivot_offset = Vector2(640, 344)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 35
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]TÍTULO DO MINIGAME![/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Beginning Timer" type="Timer" parent="." unique_id=1629185301]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="Starting Timer" type="Timer" parent="." unique_id=45528122]
+wait_time = 2.0
+one_shot = true
+
+[node name="Transition Timer" type="Timer" parent="." unique_id=330282634]
+
+[node name="Ending Timer" type="Timer" parent="." unique_id=1205988227]
+
+[node name="CurrentGame" type="Node" parent="." unique_id=1014714875]
+
+[node name="Lives Text" type="RichTextLabel" parent="." unique_id=1124312863]
+clip_contents = false
+offset_top = -120.0
+offset_right = 1216.0
+offset_bottom = -32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[right]99 x"
+scroll_active = false
+
+[node name="Lives Container" type="BoxContainer" parent="Lives Text" unique_id=636169926]
+layout_mode = 0
+offset_left = 784.0
+offset_top = -8.0
+offset_right = 1215.0
+offset_bottom = 75.0
+alignment = 2
+
+[node name="Lives Holder" type="Control" parent="Lives Text/Lives Container" unique_id=700960613]
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+
+[node name="Lives Icon" type="AnimatedSprite2D" parent="Lives Text/Lives Container/Lives Holder" unique_id=1570952133]
+position = Vector2(40, 40)
+rotation = 0.2932153
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_87mt6")
+script = ExtResource("4_8vovd")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Lives Text/Lives Container/Lives Holder" unique_id=566152082]
+
+[connection signal="timeout" from="Beginning Timer" to="." method="_on_beginning_timer_timeout"]
+[connection signal="timeout" from="Starting Timer" to="." method="_on_starting_timer_timeout"]
+[connection signal="timeout" from="Transition Timer" to="." method="_on_transition_timer_timeout"]

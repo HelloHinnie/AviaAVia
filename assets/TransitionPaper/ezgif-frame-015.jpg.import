@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p5w2yhe7dwjk"
-path="res://.godot/imported/presilha.svg-9350ed733da9b859f30ed111b5d2ee1b.ctex"
+uid="uid://ct0bdspj1if3c"
+path="res://.godot/imported/ezgif-frame-015.jpg-51a44b9d276b1559dfa847c00aed4f26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/UI/TransitionPage/assets/presilha.svg"
-dest_files=["res://.godot/imported/presilha.svg-9350ed733da9b859f30ed111b5d2ee1b.ctex"]
+source_file="res://assets/TransitionPaper/ezgif-frame-015.jpg"
+dest_files=["res://.godot/imported/ezgif-frame-015.jpg-51a44b9d276b1559dfa847c00aed4f26.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

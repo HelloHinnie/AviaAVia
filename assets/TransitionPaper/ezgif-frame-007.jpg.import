@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rx11w87j3iyr"
-path="res://.godot/imported/bancos.png-6a5a49372d8f31b074c71bff6c3ccbb5.ctex"
+uid="uid://bjsgtibn6uv8u"
+path="res://.godot/imported/ezgif-frame-007.jpg-25aaec554aeea2ebe976ab7ca15059eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/UI/TransitionPage/assets/bancos.png"
-dest_files=["res://.godot/imported/bancos.png-6a5a49372d8f31b074c71bff6c3ccbb5.ctex"]
+source_file="res://assets/TransitionPaper/ezgif-frame-007.jpg"
+dest_files=["res://.godot/imported/ezgif-frame-007.jpg-25aaec554aeea2ebe976ab7ca15059eb.ctex"]
 
 [params]
 

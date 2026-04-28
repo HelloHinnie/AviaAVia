@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bjwqefajge3au" path="res://games/aperte_os_cintos/cinto.gd" id="1_goy7l"]
 [ext_resource type="Script" uid="uid://do7fq30avub15" path="res://games/aperte_os_cintos/cinto_passador.gd" id="1_m0pd6"]
-[ext_resource type="Texture2D" uid="uid://b8k05w27va0f" path="res://main/UI/TransitionPage/assets/rect1.svg" id="3_3aqqk"]
-[ext_resource type="Texture2D" uid="uid://cq6dfugudx2td" path="res://main/UI/TransitionPage/assets/path63.svg" id="4_3aqqk"]
+[ext_resource type="Texture2D" uid="uid://b8k05w27va0f" path="res://assets/rect1.svg" id="3_3aqqk"]
+[ext_resource type="Texture2D" uid="uid://cq6dfugudx2td" path="res://assets/path63.svg" id="4_3aqqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h60i2"]
 size = Vector2(46, 46)

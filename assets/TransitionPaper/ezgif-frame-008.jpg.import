@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6rbpmrklfc5v"
-path="res://.godot/imported/presilha.png-bd238504f73d96f219f5a6143b04fb03.ctex"
+uid="uid://1imhxkspt712"
+path="res://.godot/imported/ezgif-frame-008.jpg-ebeb8c7c23264e6e9c890c1d3637a3ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/UI/TransitionPage/assets/presilha.png"
-dest_files=["res://.godot/imported/presilha.png-bd238504f73d96f219f5a6143b04fb03.ctex"]
+source_file="res://assets/TransitionPaper/ezgif-frame-008.jpg"
+dest_files=["res://.godot/imported/ezgif-frame-008.jpg-ebeb8c7c23264e6e9c890c1d3637a3ff.ctex"]
 
 [params]
 

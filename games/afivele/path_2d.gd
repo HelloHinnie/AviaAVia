@@ -2,6 +2,8 @@ extends Path2D
 
 @onready var path_follow = $PathFollow2D
 var dragging = false
+var start_position: Vector2 = Vector2.ZERO
+
 
 func _input(event):
 	# Detecta o toque inicial no objeto (ou na tela)
@@ -14,6 +16,8 @@ func _input(event):
 	# Movimentação
 	if event is InputEventScreenDrag and dragging:
 		update_position(event.position)
+	else:
+		event.position = start_position
 
 func update_position(touch_pos: Vector2):
 	# 1. Converte a posição global do toque para a posição local do Path

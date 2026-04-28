@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqc1n1brkux2g"]
 
 [ext_resource type="Script" uid="uid://brrmh04gya04c" path="res://games/aperte_os_cintos/aperte_os_cintos.gd" id="1_w4dmw"]
-[ext_resource type="Texture2D" uid="uid://rx11w87j3iyr" path="res://main/UI/TransitionPage/assets/bancos.png" id="2_hkua4"]
+[ext_resource type="Texture2D" uid="uid://rx11w87j3iyr" path="res://assets/bancos.png" id="2_hkua4"]
 [ext_resource type="PackedScene" uid="uid://b7pwcou3s8cv" path="res://games/aperte_os_cintos/Cinto.tscn" id="2_u6mev"]
 
 [node name="Node2D" type="Node" unique_id=906630682]

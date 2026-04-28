@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://chiupuhsihawp"]
+
+[ext_resource type="Script" uid="uid://bktkvtwv0ddja" path="res://main/main_menu.gd" id="1_5b7ti"]
+
+[node name="MainMenu" type="Node2D" unique_id=221093948]
+script = ExtResource("1_5b7ti")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=236970957]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="ButtonManager" unique_id=113322177]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 224.0
+offset_right = 768.0
+offset_bottom = 328.0
+text = "Começar
+"
+
+[node name="Options" type="Button" parent="ButtonManager" unique_id=176580327]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 344.0
+offset_right = 768.0
+offset_bottom = 448.0
+text = "Configurações"
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=445514]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 464.0
+offset_right = 768.0
+offset_bottom = 568.0
+text = "Sair
+"
+
+[connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
