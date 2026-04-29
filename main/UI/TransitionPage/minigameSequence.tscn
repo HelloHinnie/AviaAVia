@@ -4,8 +4,20 @@
 [ext_resource type="FontFile" uid="uid://gk76rn4w7uc0" path="res://main/assets/sprites/xilosa_.ttf" id="2_lqagx"]
 [ext_resource type="Texture2D" uid="uid://n55xmt87k010" path="res://assets/path10.png" id="3_ggk07"]
 [ext_resource type="Script" uid="uid://btlwogyag4poj" path="res://main/UI/TransitionPage/rotate_icon.gd" id="4_8vovd"]
+[ext_resource type="Script" uid="uid://c2l7e35lu85om" path="res://main/UI/TransitionPage/motorcycleAnimation.gd" id="5_lqagx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_87mt6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ggk07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggk07"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -90,6 +102,11 @@ sprite_frames = SubResource("SpriteFrames_87mt6")
 script = ExtResource("4_8vovd")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Lives Text/Lives Container/Lives Holder" unique_id=566152082]
+
+[node name="Motoca" type="AnimatedSprite2D" parent="." unique_id=168218642]
+position = Vector2(640, 384)
+sprite_frames = SubResource("SpriteFrames_ggk07")
+script = ExtResource("5_lqagx")
 
 [connection signal="timeout" from="Beginning Timer" to="." method="_on_beginning_timer_timeout"]
 [connection signal="timeout" from="Starting Timer" to="." method="_on_starting_timer_timeout"]

@@ -1,6 +1,20 @@
-[gd_scene format=3 uid="uid://dn8cx0rlurcv5"]
+[gd_scene format=3 uid="uid://cep11k61ure8k"]
 
-[ext_resource type="Script" uid="uid://ggxlxkivuibm" path="res://main/global.gd" id="1_ppy4l"]
+[sub_resource type="GDScript" id="GDScript_3phgf"]
+script/source = "extends Node
+
+
+# Timer, vidas, velocidade
+
+var timerMultiplier = 1.0
+var timerMultiplierDefault = 1.0
+
+var startingLives : int = 1
+var startingLivesDefault : int = 4
+
+var speedEvery : int = 5
+var speedEveryDefault : int = 5
+"
 
 [node name="Global" type="Node" unique_id=1584323282]
-script = ExtResource("1_ppy4l")
+script = SubResource("GDScript_3phgf")

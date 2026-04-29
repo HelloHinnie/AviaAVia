@@ -6,8 +6,13 @@ var lives
 @onready var lives_icon: AnimatedSprite2D = $"Lives Text/Lives Container/Lives Holder/Lives Icon"
 @onready var lives_container: BoxContainer = $"Lives Text/Lives Container"
 @onready var lives_holder: Control = $"Lives Text/Lives Container/Lives Holder"
+
 var livesTween
 var scoreTween
+
+#Moto
+@onready var motoca: AnimatedSprite2D = $Motoca
+
 
 #Timers
 @onready var beginning_timer: Timer = $"Beginning Timer"
@@ -31,12 +36,14 @@ func _on_starting_timer_timeout():
 	#Apresenta  o título do jogo
 	#title_text.text = "[shake rate = 20.0 level=20][center]\n" + currentGame.title
 	displayScore("hide")
+	motoca.hide()
 	title_text.show()
 	title_text.text = "[shake rate = 20.0 level=20][center]\n" + "Aperte os Cintos!"
 	transition_timer.start()
 
 
 func _on_transition_timer_timeout() -> void:
+	title_text.hide()
 	pass # Replace with function body.
 	
 # Called when the node enters the scene tree for the first time.
@@ -44,7 +51,7 @@ func _ready() -> void:
 	
 	title_text.hide()
 	#Lives/Score
-	lives = GlobalScene.startingLives
+	lives = Global.startingLives
 	
 	lives_text.text = "[right][color=#00000000]99 x    "
 	lives_icon.frame = 0

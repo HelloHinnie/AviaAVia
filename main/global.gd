@@ -1,6 +1,6 @@
 extends Node
 
-class_name GlobalVariables
+
 # Timer, vidas, velocidade
 
 var timerMultiplier = 1.0
