@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bqc1n1brkux2g"]
 
 [ext_resource type="Script" uid="uid://brrmh04gya04c" path="res://games/aperte_os_cintos/aperte_os_cintos.gd" id="1_w4dmw"]
-[ext_resource type="Texture2D" uid="uid://rx11w87j3iyr" path="res://assets/bancos.png" id="2_hkua4"]
+[ext_resource type="Texture2D" uid="uid://cn2pdqf4mx8l8" path="res://games/aperte_os_cintos/Gemini_Generated_Image_qjrvpxqjrvpxqjrv.png" id="2_rev0t"]
 [ext_resource type="PackedScene" uid="uid://b7pwcou3s8cv" path="res://games/aperte_os_cintos/Cinto.tscn" id="2_u6mev"]
+[ext_resource type="Script" uid="uid://dn4myeycnwesj" path="res://games/aperte_os_cintos/TimerBar.gd" id="4_rev0t"]
 
 [node name="Node2D" type="Node" unique_id=906630682]
 script = ExtResource("1_w4dmw")
@@ -11,7 +12,7 @@ metadata/_custom_type_script = "uid://d1sheflexhiew"
 [node name="Bancos" type="Sprite2D" parent="." unique_id=1896840322]
 position = Vector2(640, 360.00003)
 scale = Vector2(0.46376806, 0.47872344)
-texture = ExtResource("2_hkua4")
+texture = ExtResource("2_rev0t")
 
 [node name="Cinto" parent="." unique_id=1607024498 instance=ExtResource("2_u6mev")]
 Pa_Position = Vector2(136, 232)
@@ -36,3 +37,17 @@ Tamanho = Vector2(-0.8, 0.8)
 Pa_Position = Vector2(896, 160)
 Pe_Position = Vector2(720, 384)
 Tamanho = Vector2(-0.8, 0.8)
+
+[node name="Timer" type="Timer" parent="." unique_id=1313455038]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1133232457]
+offset_top = 704.0
+offset_right = 1280.0
+offset_bottom = 744.0
+color = Color(0, 1, 0, 1)
+script = ExtResource("4_rev0t")
+
+[node name="EndTimer" type="Timer" parent="." unique_id=1435174788]

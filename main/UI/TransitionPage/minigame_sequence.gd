@@ -2,10 +2,13 @@ extends Node2D
 
 #Lives
 var lives
+var score
 @onready var lives_text: RichTextLabel = $"Lives Text"
 @onready var lives_icon: AnimatedSprite2D = $"Lives Text/Lives Container/Lives Holder/Lives Icon"
 @onready var lives_container: BoxContainer = $"Lives Text/Lives Container"
 @onready var lives_holder: Control = $"Lives Text/Lives Container/Lives Holder"
+@onready var speed_lines: ColorRect = $SpeedLines
+@onready var score_text: RichTextLabel = $"Score Text"
 
 var livesTween
 var scoreTween
@@ -35,8 +38,25 @@ func _on_beginning_timer_timeout() -> void:
 func _on_starting_timer_timeout():
 	#Apresenta  o título do jogo
 	#title_text.text = "[shake rate = 20.0 level=20][center]\n" + currentGame.title
+	
+	#Pausar processamento
+	get_tree().paused = true
+	
+	#Tocar jingle
+	
+	#Desligar shaders e esconder vidas
+	speed_lines.hide()
 	displayScore("hide")
 	motoca.hide()
+	
+	#Se estava jogando um jogo anteriormente, limpar
+	if currentGame:
+		currentGame.free()
+	
+	get_node("/root/" + self.name + "/CurrentGame").add_child(nextScene)
+	currentGame = get_node("/root/" + self.name + "/CurrentGame").get_child(0)
+	currentGame.send_results.connect(_on_game_end) # Connect the game end signal
+	
 	title_text.show()
 	title_text.text = "[shake rate = 20.0 level=20][center]\n" + "Aperte os Cintos!"
 	transition_timer.start()
@@ -45,7 +65,13 @@ func _on_starting_timer_timeout():
 func _on_transition_timer_timeout() -> void:
 	title_text.hide()
 	pass # Replace with function body.
-	
+
+func _on_game_end(win):
+	if win:
+		score += 1
+		score_text.text = "[left]SCORE: " + str(score)
+		title_text.text = "[shake rate=20.0 level=20][center]\n\n\n" + "Ganhou!"
+		title_text.show()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	

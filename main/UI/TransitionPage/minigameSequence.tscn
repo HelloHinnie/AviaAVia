@@ -2,26 +2,42 @@
 
 [ext_resource type="Script" uid="uid://mt0jdns6x2ed" path="res://main/UI/TransitionPage/minigame_sequence.gd" id="1_c86ia"]
 [ext_resource type="FontFile" uid="uid://gk76rn4w7uc0" path="res://main/assets/sprites/xilosa_.ttf" id="2_lqagx"]
-[ext_resource type="Texture2D" uid="uid://n55xmt87k010" path="res://assets/path10.png" id="3_ggk07"]
+[ext_resource type="Texture2D" uid="uid://bw36c4dc6seug" path="res://main/assets/sprites/lifes/sun.svg" id="3_8vovd"]
+[ext_resource type="Shader" uid="uid://d2h2ebj4b8q3q" path="res://main/UI/TransitionPage/SpeedLines.gdshader" id="3_87mt6"]
 [ext_resource type="Script" uid="uid://btlwogyag4poj" path="res://main/UI/TransitionPage/rotate_icon.gd" id="4_8vovd"]
+[ext_resource type="Texture2D" uid="uid://cy10y71mwurkx" path="res://main/assets/sprites/lifes/moon.svg" id="4_87mt6"]
+[ext_resource type="Texture2D" uid="uid://dkl2abhniaqdu" path="res://main/UI/TransitionPage/Gemini_Generated_Image_wbr7gkwbr7gkwbr7 (1).png" id="5_ggk07"]
 [ext_resource type="Script" uid="uid://c2l7e35lu85om" path="res://main/UI/TransitionPage/motorcycleAnimation.gd" id="5_lqagx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_87mt6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggk07"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ggk07")
+"texture": ExtResource("5_ggk07")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ggk07"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oamjq"]
+shader = ExtResource("3_87mt6")
+shader_parameter/Speed = 0.5
+shader_parameter/LineLength = 2.0
+shader_parameter/LineColor = Color(1, 1, 1, 1)
+shader_parameter/Softness = 0.1
+shader_parameter/Weirdness = 0.1
+shader_parameter/Radius = 1.3
+shader_parameter/Freq = 10.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87mt6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ggk07")
+"texture": ExtResource("3_8vovd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_87mt6")
 }],
 "loop": true,
 "name": &"default",
@@ -49,6 +65,18 @@ theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center]TÍTULO DO MINIGAME![/center]"
 metadata/_edit_use_anchors_ = true
+
+[node name="Motoca" type="AnimatedSprite2D" parent="." unique_id=168218642]
+position = Vector2(616, 384)
+scale = Vector2(0.2916667, 0.2916667)
+sprite_frames = SubResource("SpriteFrames_ggk07")
+script = ExtResource("5_lqagx")
+
+[node name="SpeedLines" type="ColorRect" parent="." unique_id=459880219]
+material = SubResource("ShaderMaterial_oamjq")
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 1, 1, 0)
 
 [node name="Beginning Timer" type="Timer" parent="." unique_id=1629185301]
 wait_time = 0.1
@@ -95,18 +123,15 @@ custom_minimum_size = Vector2(84, 84)
 layout_mode = 2
 
 [node name="Lives Icon" type="AnimatedSprite2D" parent="Lives Text/Lives Container/Lives Holder" unique_id=1570952133]
-position = Vector2(40, 40)
+position = Vector2(58.49962, 30.436975)
 rotation = 0.2932153
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.29768646, 0.31374)
 sprite_frames = SubResource("SpriteFrames_87mt6")
 script = ExtResource("4_8vovd")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Lives Text/Lives Container/Lives Holder" unique_id=566152082]
-
-[node name="Motoca" type="AnimatedSprite2D" parent="." unique_id=168218642]
-position = Vector2(640, 384)
-sprite_frames = SubResource("SpriteFrames_ggk07")
-script = ExtResource("5_lqagx")
+[node name="Score Text" type="RichTextLabel" parent="." unique_id=756126857]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="Beginning Timer" to="." method="_on_beginning_timer_timeout"]
 [connection signal="timeout" from="Starting Timer" to="." method="_on_starting_timer_timeout"]

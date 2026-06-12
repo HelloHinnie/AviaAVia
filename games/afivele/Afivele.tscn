@@ -1,45 +1,50 @@
 [gd_scene format=3 uid="uid://8vqkae37nmvb"]
 
 [ext_resource type="Script" uid="uid://d1sptw23pp2re" path="res://games/afivele/afivele.gd" id="1_hahkm"]
-[ext_resource type="Texture2D" uid="uid://dxjpgtvp3y3vd" path="res://main/assets/sprites/path10.png" id="1_jfbc3"]
 [ext_resource type="Script" uid="uid://bsewkryt0w7cb" path="res://games/afivele/path_2d.gd" id="2_abmxd"]
+[ext_resource type="Texture2D" uid="uid://dlcg51qw7veqg" path="res://games/afivele/Gemini_Generated_Image_s70cirs70cirs70c-Photoroom.png" id="2_m3ffb"]
+[ext_resource type="Texture2D" uid="uid://dtf46qehauxfj" path="res://games/afivele/rect1.png" id="4_m3ffb"]
 
 [sub_resource type="Curve2D" id="Curve2D_hahkm"]
 _data = {
-"points": PackedVector2Array(0, -126.96085, 0, 126.96085, 1092.0681, -240.60498, 108.6503, -42.74819, -108.6503, 42.74819, 836.06805, 15.39502, 87.903824, 30.803902, -87.903824, -30.803902, 452.06805, 15.39502, -8.339593, 121.21138, 8.339593, -121.21138, 196.06805, -240.60498)
+"points": PackedVector2Array(30.57851, -60.018703, -30.57851, 60.018703, 904, -64, 64.84865, -26.219263, -64.84865, 26.219263, 728, 88, 38.317047, 21.71299, -38.317047, -21.71299, 504, 88, 47.858753, 108.81469, -47.858753, -108.81469, 344, -80)
 }
 point_count = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abmxd"]
+radius = 75.29119
 
 [node name="Afivele" type="Node2D" unique_id=1103309166]
 script = ExtResource("1_hahkm")
 
+[node name="GeminiGeneratedImageS70Cirs70Cirs70cPhotoroom" type="Sprite2D" parent="." unique_id=1538675687]
+z_index = -1
+position = Vector2(616.00006, 1264)
+scale = Vector2(1.5895833, 1.5895833)
+texture = ExtResource("2_m3ffb")
+
 [node name="Path2D" type="Path2D" parent="." unique_id=2105314961]
-position = Vector2(-8, 560)
+position = Vector2(-8.000061, 560)
 curve = SubResource("Curve2D_hahkm")
 script = ExtResource("2_abmxd")
+
+[node name="Line2D" type="Line2D" parent="Path2D" unique_id=1828964345]
+z_index = 0
+width = 40.0
+default_color = Color(0, 0, 0, 1)
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=105954107]
-position = Vector2(1092.0681, -240.60498)
-rotation = 1.5707964
+position = Vector2(904, -64)
+rotation = 2.0420012
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=740418648]
+z_index = 1
 position = Vector2(0.087265015, 1.0217209)
 rotation = 4.6984262
-scale = Vector2(0.3854028, 0.49010113)
-texture = ExtResource("1_jfbc3")
+scale = Vector2(2, 2)
+texture = ExtResource("4_m3ffb")
 
-[node name="Path2D2" type="Path2D" parent="." unique_id=2042605739]
-position = Vector2(1280, 560)
-scale = Vector2(-1, 1)
-curve = SubResource("Curve2D_hahkm")
-script = ExtResource("2_abmxd")
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" unique_id=610683320]
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" unique_id=1101880304]
-position = Vector2(1092.0681, -240.60498)
-rotation = 1.5707964
-
-[node name="Sprite2D" type="Sprite2D" parent="Path2D2/PathFollow2D" unique_id=961224883]
-position = Vector2(0.087265015, 1.0217209)
-rotation = 4.6984262
-scale = Vector2(0.3854028, 0.49010113)
-texture = ExtResource("1_jfbc3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D" unique_id=830412048]
+shape = SubResource("CircleShape2D_abmxd")

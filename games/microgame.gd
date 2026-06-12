@@ -22,6 +22,7 @@ func game_loss():
 func game_cleared():
 	if game_player != null:
 		game_player.won_micro_game = true
+		print("ganhou")
 	pass
 
 func force_microgame_end():

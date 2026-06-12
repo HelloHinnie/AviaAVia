@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nwne6kglnny2"
-path="res://.godot/imported/life.png-ad60de1e6527762a2f95a695c52e7a2b.ctex"
+uid="uid://dkl2abhniaqdu"
+path="res://.godot/imported/Gemini_Generated_Image_wbr7gkwbr7gkwbr7 (1).png-8a747ff90bae139bf1a4f2df045e926d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/assets/sprites/life.png"
-dest_files=["res://.godot/imported/life.png-ad60de1e6527762a2f95a695c52e7a2b.ctex"]
+source_file="res://main/UI/TransitionPage/Gemini_Generated_Image_wbr7gkwbr7gkwbr7 (1).png"
+dest_files=["res://.godot/imported/Gemini_Generated_Image_wbr7gkwbr7gkwbr7 (1).png-8a747ff90bae139bf1a4f2df045e926d.ctex"]
 
 [params]
 

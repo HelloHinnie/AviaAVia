@@ -1,10 +1,17 @@
-[gd_scene format=3 uid="uid://cxk48wh8f4whr"]
+[gd_scene format=3 uid="uid://cnq27xiv1kygq"]
 
 [ext_resource type="FontFile" uid="uid://gk76rn4w7uc0" path="res://main/assets/sprites/xilosa_.ttf" id="1_lyknm"]
-[ext_resource type="Script" uid="uid://cnnqxwnk0hkbb" path="res://games/microgame_player.gd" id="1_op8ap"]
+
+[sub_resource type="GDScript" id="GDScript_ibk5u"]
+script/source = "extends Node2D
+
+var current
+func _ready() -> void:
+	get_tree().change_scene_to_file(\"res://games/aperte_os_cintos/AperteOsCintos.tscn\")
+"
 
 [node name="Node2D" type="Node2D" unique_id=94260682]
-script = ExtResource("1_op8ap")
+script = SubResource("GDScript_ibk5u")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=573417151]
 

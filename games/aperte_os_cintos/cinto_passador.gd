@@ -40,6 +40,8 @@ func _on_cinto_presilha_area_entered(area: Area2D) -> void:
 		travado = true
 		cinto.Locked = true
 		dragging = false
+		if get_parent().has_method("checkLocked"):
+			get_parent().checkLocked()
 		if cinto.Tamanho.x < 0:
 			global_position = cinto_presilha.global_position - Vector2(-15, 17)
 		else:
