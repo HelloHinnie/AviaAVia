@@ -6,7 +6,7 @@ extends Node
 var timerMultiplier = 1.0
 var timerMultiplierDefault = 1.0
 
-var startingLives : int = 1
+var startingLives : int = 5
 var startingLivesDefault : int = 4
 
 var speedEvery : int = 5
