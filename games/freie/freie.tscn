@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://6ousgsios2pg"]
+
+[ext_resource type="Script" uid="uid://dyw3o627tyka7" path="res://games/freie/freie.gd" id="1_gmqqf"]
+[ext_resource type="Script" uid="uid://dqqo28eara80i" path="res://games/freie/carro.gd" id="1_nk2t1"]
+[ext_resource type="Texture2D" uid="uid://bo4vpglsq5ogn" path="res://games/freie/path100.svg" id="2_s7hx4"]
+[ext_resource type="Texture2D" uid="uid://t5uxceijjbm5" path="res://games/freie/image1.png" id="3_s7hx4"]
+[ext_resource type="PackedScene" uid="uid://dt5ovfyqguux3" path="res://games/aperte_os_cintos/TimerBar.tscn" id="5_3ar0v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(341, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(283.94366, 365.07025)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(167.60612, 284.93042)
+
+[node name="Freie" type="Node2D" unique_id=1185828059]
+script = ExtResource("1_gmqqf")
+title = "Freie!"
+desc = "Freie antes de atingir o animal!"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1611683592]
+position = Vector2(1416, 448)
+script = ExtResource("1_nk2t1")
+velocidade = null
+forca_do_freio = null
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=702321986]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1652028433]
+shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0.41487777, 0.48564464, 0.9398655, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1818054118]
+position = Vector2(0, 3.0517578e-05)
+scale = Vector2(0.8682171, 0.3555556)
+texture = ExtResource("2_s7hx4")
+
+[node name="animal" type="Sprite2D" parent="." unique_id=2004253384]
+position = Vector2(208, 440)
+scale = Vector2(0.39444444, 0.39444444)
+texture = ExtResource("2_s7hx4")
+
+[node name="Area2D" type="Area2D" parent="animal" unique_id=1213307741]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="animal/Area2D" unique_id=618788262]
+position = Vector2(60.84503, -0.00024414063)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="freio" type="Sprite2D" parent="." unique_id=1474035884]
+position = Vector2(87.667366, 584.5452)
+scale = Vector2(0.95068204, 0.950682)
+texture = ExtResource("3_s7hx4")
+
+[node name="Area2D" type="Area2D" parent="freio" unique_id=362263238]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="freio/Area2D" unique_id=1641601800]
+position = Vector2(1.5984173e-05, 0)
+scale = Vector2(1.0000007, 1.0000007)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Timer" type="Timer" parent="." unique_id=879086303]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="EndTimer" type="Timer" parent="." unique_id=1026320625]
+
+[node name="ColorRect2" parent="." unique_id=1428415499 node_paths=PackedStringArray("timer") instance=ExtResource("5_3ar0v")]
+position = Vector2(0, 704)
+timer = NodePath("../Timer")
+
+[connection signal="area_entered" from="animal/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="freio/Area2D" to="CharacterBody2D" method="_on_area_2d_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

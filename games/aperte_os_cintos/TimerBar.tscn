@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dt5ovfyqguux3"]
+
+[ext_resource type="Texture2D" uid="uid://22hen5ikx7pv" path="res://games/calce_certo/CORDA.png" id="1_nos7k"]
+[ext_resource type="Script" uid="uid://dn4myeycnwesj" path="res://games/aperte_os_cintos/TimerBar.gd" id="2_pf5kq"]
+[ext_resource type="Shader" uid="uid://c3cwk8p5u5wjj" path="res://main/Xilo.gdshader" id="3_2af6i"]
+[ext_resource type="Texture2D" uid="uid://6yywlmpl66rj" path="res://assets/fogo1.png" id="4_5r5kn"]
+[ext_resource type="Texture2D" uid="uid://c66e7ipxam4ed" path="res://assets/fogo3.png" id="5_yfifp"]
+[ext_resource type="Texture2D" uid="uid://b80hmwex5j131" path="res://assets/fogo4.png" id="6_h7nlj"]
+[ext_resource type="Texture2D" uid="uid://dr1mlkhac5e1r" path="res://assets/fogo5.png" id="7_b1ub5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d0u6y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxlo8"]
+shader = ExtResource("3_2af6i")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_d0u6y")
+shader_parameter/distortion_strength = 0.015
+shader_parameter/fps = 3.0
+shader_parameter/noise_scale = 1.0
+shader_parameter/threshold = 0.1030000048925
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t163w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5r5kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yfifp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h7nlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b1ub5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="ColorRect" type="Line2D" unique_id=1428415499]
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 1280, 0)
+width = 20.0
+texture = ExtResource("1_nos7k")
+texture_mode = 1
+script = ExtResource("2_pf5kq")
+
+[node name="Fogo" type="AnimatedSprite2D" parent="." unique_id=482447345]
+material = SubResource("ShaderMaterial_dxlo8")
+position = Vector2(1272, -48)
+scale = Vector2(0.41279018, 0.4611753)
+sprite_frames = SubResource("SpriteFrames_t163w")
+autoplay = "default"

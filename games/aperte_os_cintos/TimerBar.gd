@@ -1,6 +1,7 @@
-extends ColorRect
+extends Line2D
 
-@onready var timer: Timer = $"../Timer"
+@export var timer: Timer
+@onready var fogo: AnimatedSprite2D = $"Fogo"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,5 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	self.size.x = remap(timer.time_left, timer.wait_time, 0, 1280, 0)
-	self.color.h = remap(timer.time_left, timer.wait_time, 0, 0.37, 0)
+	self.set_point_position(1, Vector2(remap(timer.time_left, timer.wait_time, 0, 1280, 0),0))
+	fogo.position = Vector2(remap(timer.time_left, timer.wait_time, 0, 1280, 0), -48)
+	if timer.time_left == 0:
+		fogo.hide()

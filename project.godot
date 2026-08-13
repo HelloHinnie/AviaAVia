@@ -11,11 +11,14 @@ config_version=5
 [application]
 
 config/name="Avia a Via"
-config/features=PackedStringArray("4.6", "Mobile")
+run/main_scene="uid://chiupuhsihawp"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="uid://cy10y71mwurkx"
 
 [autoload]
 
 Global="*uid://dxhx7w5idyfu1"
+TransitionPaper="*uid://b50yjaq6prgk1"
 
 [display]
 

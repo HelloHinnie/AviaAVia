@@ -8,7 +8,7 @@ class_name Cinto
 @export var Pe_Position: Vector2 = Vector2.ZERO
 @export var Tamanho: Vector2 = Vector2.ONE
 
-var Locked: bool = false
+
 
 func _ready() -> void:
 	cinto_presilha.scale = Tamanho
