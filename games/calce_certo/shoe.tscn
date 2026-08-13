@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://d2j4kj6g3aemh"]
+
+[ext_resource type="Shader" uid="uid://dojrgkinyrrxf" path="res://games/calce_certo/dotted_line.gdshader" id="1_5hwtn"]
+[ext_resource type="Texture2D" uid="uid://dlh1ptpp337ue" path="res://games/calce_certo/botina.png" id="2_7ep7n"]
+[ext_resource type="Texture2D" uid="uid://cfh4vhkuibw7q" path="res://games/calce_certo/havaiana.png" id="3_7k4g4"]
+[ext_resource type="Texture2D" uid="uid://c3l66hsfpbxs7" path="res://games/calce_certo/papete.png" id="4_lo4ps"]
+[ext_resource type="Texture2D" uid="uid://0jruxotp8xat" path="res://games/calce_certo/rasteira.png" id="5_d6k5l"]
+[ext_resource type="Texture2D" uid="uid://buyvjh6cuim2x" path="res://games/calce_certo/tenis.png" id="6_frf0l"]
+[ext_resource type="Texture2D" uid="uid://bhd2tgkcx6f2r" path="res://games/calce_certo/salto.png" id="7_ojbb4"]
+[ext_resource type="Script" uid="uid://ehkfwdpmd2to" path="res://games/calce_certo/shoe.gd" id="8_7ep7n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3s4b"]
+resource_local_to_scene = true
+shader = ExtResource("1_5hwtn")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/onoff = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00c62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ep7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7k4g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lo4ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d6k5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_frf0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ojbb4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_iqc6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shoe:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kjpmb"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shoe:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [-0.7853981633974483, 0.0, 0.7853981633974483]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kahym"]
+_data = {
+&"RESET": SubResource("Animation_iqc6p"),
+&"new_animation": SubResource("Animation_kjpmb")
+}
+
+[node name="Shoe" type="AnimatedSprite2D" unique_id=314445766]
+material = SubResource("ShaderMaterial_m3s4b")
+scale = Vector2(0.34787238, 0.39379305)
+sprite_frames = SubResource("SpriteFrames_00c62")
+script = ExtResource("8_7ep7n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251265988]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_kahym")
+autoplay = &"new_animation"
+
+[node name="Button" type="Button" parent="." unique_id=400114896]
+offset_left = -206.97247
+offset_top = -162.52191
+offset_right = 252.96628
+offset_bottom = 182.83716

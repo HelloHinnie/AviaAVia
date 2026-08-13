@@ -4,10 +4,37 @@
 [ext_resource type="FontFile" uid="uid://gk76rn4w7uc0" path="res://main/assets/sprites/xilosa_.ttf" id="2_lqagx"]
 [ext_resource type="Texture2D" uid="uid://bw36c4dc6seug" path="res://main/assets/sprites/lifes/sun.svg" id="3_8vovd"]
 [ext_resource type="Shader" uid="uid://d2h2ebj4b8q3q" path="res://main/UI/TransitionPage/SpeedLines.gdshader" id="3_87mt6"]
+[ext_resource type="Shader" uid="uid://db7wyc1mr7sf7" path="res://main/UI/TransitionPage/blurrr.gdshader" id="3_oamjq"]
 [ext_resource type="Script" uid="uid://btlwogyag4poj" path="res://main/UI/TransitionPage/rotate_icon.gd" id="4_8vovd"]
 [ext_resource type="Texture2D" uid="uid://cy10y71mwurkx" path="res://main/assets/sprites/lifes/moon.svg" id="4_87mt6"]
+[ext_resource type="Shader" uid="uid://njxh0cdmo6x6" path="res://main/UI/TransitionPage/grey.gdshader" id="4_ltuv3"]
 [ext_resource type="Texture2D" uid="uid://dkl2abhniaqdu" path="res://main/UI/TransitionPage/Gemini_Generated_Image_wbr7gkwbr7gkwbr7 (1).png" id="5_ggk07"]
 [ext_resource type="Script" uid="uid://c2l7e35lu85om" path="res://main/UI/TransitionPage/motorcycleAnimation.gd" id="5_lqagx"]
+[ext_resource type="Texture2D" uid="uid://cw4n62we1hucm" path="res://main/UI/TransitionPage/path25-2.png" id="9_0f5oc"]
+[ext_resource type="Shader" uid="uid://c3cwk8p5u5wjj" path="res://main/Xilo.gdshader" id="9_lvii4"]
+[ext_resource type="Texture2D" uid="uid://dy5il2fu8rl01" path="res://main/UI/TransitionPage/layer1-5.png" id="10_rp7r1"]
+[ext_resource type="Texture2D" uid="uid://d03of83pl3efy" path="res://assets/button2.svg" id="12_7v6wu"]
+[ext_resource type="Texture2D" uid="uid://cml57ynuaactk" path="res://assets/text1.png" id="15_840mn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oamjq"]
+shader = ExtResource("3_87mt6")
+shader_parameter/Speed = 0.8850000420375
+shader_parameter/LineLength = 1.0000000475
+shader_parameter/LineColor = Color(1, 1, 1, 1)
+shader_parameter/Softness = 0.098000004655
+shader_parameter/Weirdness = 0.1
+shader_parameter/Radius = 1.3
+shader_parameter/Freq = 5.1790001035025
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("3_oamjq")
+shader_parameter/blur_amount = 3.0000001425
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltuv3"]
+shader = ExtResource("4_ltuv3")
+shader_parameter/brightness = 0.75
+shader_parameter/contrast = 2.0
+shader_parameter/saturation = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ggk07"]
 animations = [{
@@ -15,20 +42,260 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_ggk07")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oamjq"]
-shader = ExtResource("3_87mt6")
-shader_parameter/Speed = 0.5
-shader_parameter/LineLength = 2.0
-shader_parameter/LineColor = Color(1, 1, 1, 1)
-shader_parameter/Softness = 0.1
-shader_parameter/Weirdness = 0.1
-shader_parameter/Radius = 1.3
-shader_parameter/Freq = 10.0
+[sub_resource type="Animation" id="Animation_rp7r1"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_840mn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvii4"]
+_data = {
+&"FadeIn": SubResource("Animation_rp7r1"),
+&"RESET": SubResource("Animation_840mn")
+}
+
+[sub_resource type="Animation" id="Animation_oamjq"]
+resource_name = "FadeZoomIn"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("titleText:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("titleText:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("titleText:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("titleText:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("titleText:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("titleText:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_0f5oc"]
+resource_name = "FadeZoomOut"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("titleText:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("titleText:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("titleText:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("titleText:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("titleText:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("titleText:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_ltuv3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("titleText:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("titleText:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("titleText:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("titleText:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("titleText:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("titleText:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltuv3"]
+_data = {
+&"FadeZoomIn": SubResource("Animation_oamjq"),
+&"FadeZoomOut": SubResource("Animation_0f5oc"),
+&"RESET": SubResource("Animation_ltuv3")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_87mt6"]
 animations = [{
@@ -39,65 +306,196 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_87mt6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_840mn"]
+noise_type = 2
+frequency = 0.0061
+fractal_weighted_strength = 0.07
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1l56o"]
+noise = SubResource("FastNoiseLite_840mn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7v6wu"]
+shader = ExtResource("9_lvii4")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_1l56o")
+shader_parameter/distortion_strength = 0.015
+shader_parameter/fps = 6.0
+shader_parameter/noise_scale = 1.0
+shader_parameter/threshold = 0.506000024035
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_840mn"]
+shader = ExtResource("9_lvii4")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_1l56o")
+shader_parameter/distortion_strength = 0.015
+shader_parameter/fps = 6.0
+shader_parameter/noise_scale = 1.0
+shader_parameter/threshold = 0.506000024035
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ycfsi"]
+shader = ExtResource("9_lvii4")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_1l56o")
+shader_parameter/distortion_strength = 0.015
+shader_parameter/fps = 6.0
+shader_parameter/noise_scale = 1.0
+shader_parameter/threshold = 0.506000024035
+
 [node name="MinigameSequence" type="Node2D" unique_id=921504306]
+process_mode = 3
 script = ExtResource("1_c86ia")
 
+[node name="Beginning Timer" type="Timer" parent="." unique_id=1629185301]
+process_mode = 3
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="Starting Timer" type="Timer" parent="." unique_id=45528122]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
+
+[node name="Transition Timer" type="Timer" parent="." unique_id=330282634]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
+
+[node name="Ending Timer" type="Timer" parent="." unique_id=1205988227]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
+
+[node name="CurrentGame" type="Node" parent="." unique_id=1014714875]
+process_mode = 1
+
+[node name="Shaders" type="CanvasLayer" parent="." unique_id=1102446452]
+layer = 2
+
+[node name="SpeedLines" type="ColorRect" parent="Shaders" unique_id=459880219]
+material = SubResource("ShaderMaterial_oamjq")
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Blur" type="ColorRect" parent="Shaders" unique_id=666426582]
+visible = false
+material = SubResource("ShaderMaterial_g4v7s")
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Greyed" type="ColorRect" parent="Shaders" unique_id=1448382666]
+visible = false
+material = SubResource("ShaderMaterial_ltuv3")
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Transition Layer" type="CanvasLayer" parent="." unique_id=1000011535]
+layer = 3
+
+[node name="Motoca" type="AnimatedSprite2D" parent="Transition Layer" unique_id=168218642]
+visible = false
+position = Vector2(616, 384)
+scale = Vector2(0.2916667, 0.2916667)
+sprite_frames = SubResource("SpriteFrames_ggk07")
+script = ExtResource("5_lqagx")
+
+[node name="Animator" type="AnimationPlayer" parent="Transition Layer" unique_id=654805926]
+libraries/ = SubResource("AnimationLibrary_lvii4")
+
 [node name="Text Layer" type="CanvasLayer" parent="." unique_id=1140489234]
+layer = 4
+
+[node name="Score Text" type="RichTextLabel" parent="Text Layer" unique_id=756126857]
+clip_contents = false
+offset_left = 64.0
+offset_top = -120.0
+offset_right = 640.0
+offset_bottom = -32.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "SCORE: 0"
+
+[node name="Speed Text" type="RichTextLabel" parent="Text Layer" unique_id=1408828280]
+clip_contents = false
+offset_top = 740.0
+offset_right = 1280.0
+offset_bottom = 828.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]ADIANTE!!!"
+
+[node name="Game Over Text" type="RichTextLabel" parent="Text Layer" unique_id=868039582]
+clip_contents = false
+offset_left = -64.0
+offset_top = -312.0
+offset_right = 1344.0
+offset_bottom = -56.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 185
+bbcode_enabled = true
+text = "[center]GAME OVER"
 
 [node name="titleText" type="RichTextLabel" parent="Text Layer" unique_id=83006558]
+modulate = Color(0, 0, 0, 0)
 clip_contents = false
 offset_right = 1280.0
 offset_bottom = 720.0
+scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(640, 344)
+mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/shadow_outline_size = 10
+theme_override_constants/shadow_outline_size = 0
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 35
 theme_override_fonts/normal_font = ExtResource("2_lqagx")
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[center]TÍTULO DO MINIGAME![/center]"
+text = "
+
+
+[center]TÍTULO DO MINIGAME![/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="Motoca" type="AnimatedSprite2D" parent="." unique_id=168218642]
-position = Vector2(616, 384)
-scale = Vector2(0.2916667, 0.2916667)
-sprite_frames = SubResource("SpriteFrames_ggk07")
-script = ExtResource("5_lqagx")
+[node name="Text Animator" type="AnimationPlayer" parent="Text Layer" unique_id=257754791]
+libraries/ = SubResource("AnimationLibrary_ltuv3")
 
-[node name="SpeedLines" type="ColorRect" parent="." unique_id=459880219]
-material = SubResource("ShaderMaterial_oamjq")
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(1, 1, 1, 0)
-
-[node name="Beginning Timer" type="Timer" parent="." unique_id=1629185301]
-wait_time = 0.1
-one_shot = true
-autostart = true
-
-[node name="Starting Timer" type="Timer" parent="." unique_id=45528122]
-wait_time = 2.0
-one_shot = true
-
-[node name="Transition Timer" type="Timer" parent="." unique_id=330282634]
-
-[node name="Ending Timer" type="Timer" parent="." unique_id=1205988227]
-
-[node name="CurrentGame" type="Node" parent="." unique_id=1014714875]
-
-[node name="Lives Text" type="RichTextLabel" parent="." unique_id=1124312863]
+[node name="Lives Text" type="RichTextLabel" parent="Text Layer" unique_id=1124312863]
 clip_contents = false
 offset_top = -120.0
 offset_right = 1216.0
 offset_bottom = -32.0
+mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/shadow_outline_size = 10
@@ -107,10 +505,10 @@ theme_override_constants/outline_size = 25
 theme_override_fonts/normal_font = ExtResource("2_lqagx")
 theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
-text = "[right]99 x"
+text = "[right]99 x    "
 scroll_active = false
 
-[node name="Lives Container" type="BoxContainer" parent="Lives Text" unique_id=636169926]
+[node name="Lives Container" type="BoxContainer" parent="Text Layer/Lives Text" unique_id=636169926]
 layout_mode = 0
 offset_left = 784.0
 offset_top = -8.0
@@ -118,21 +516,136 @@ offset_right = 1215.0
 offset_bottom = 75.0
 alignment = 2
 
-[node name="Lives Holder" type="Control" parent="Lives Text/Lives Container" unique_id=700960613]
-custom_minimum_size = Vector2(84, 84)
+[node name="Lives Holder" type="Control" parent="Text Layer/Lives Text/Lives Container" unique_id=700960613]
+custom_minimum_size = Vector2(83.333, 83.333)
 layout_mode = 2
 
-[node name="Lives Icon" type="AnimatedSprite2D" parent="Lives Text/Lives Container/Lives Holder" unique_id=1570952133]
+[node name="Lives Icon" type="AnimatedSprite2D" parent="Text Layer/Lives Text/Lives Container/Lives Holder" unique_id=1570952133]
 position = Vector2(58.49962, 30.436975)
 rotation = 0.2932153
 scale = Vector2(0.29768646, 0.31374)
 sprite_frames = SubResource("SpriteFrames_87mt6")
 script = ExtResource("4_8vovd")
 
-[node name="Score Text" type="RichTextLabel" parent="." unique_id=756126857]
+[node name="Button Layer" type="CanvasLayer" parent="." unique_id=632470158]
+process_mode = 3
+visible = false
+
+[node name="InfoButton" type="TextureButton" parent="Button Layer" unique_id=1695312352]
+material = SubResource("ShaderMaterial_7v6wu")
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 127.0
+offset_bottom = 128.0
+texture_normal = ExtResource("9_0f5oc")
+
+[node name="PauseButton" type="TextureButton" parent="Button Layer" unique_id=403290339]
+material = SubResource("ShaderMaterial_840mn")
+offset_left = 1152.0
+offset_top = -32.0
+offset_right = 1319.0
+offset_bottom = 128.0
+texture_normal = ExtResource("10_rp7r1")
+
+[node name="Pause Layer" type="CanvasLayer" parent="." unique_id=1752503742]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Pause Layer" unique_id=1931323168]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.1764706, 0.1764706, 0.1764706, 0.78431374)
+
+[node name="ButtonManager" type="Control" parent="Pause Layer/ColorRect" unique_id=1685344611]
+light_mask = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Despause" type="TextureButton" parent="Pause Layer/ColorRect/ButtonManager" unique_id=2129595370]
+material = SubResource("ShaderMaterial_ycfsi")
+layout_mode = 0
+offset_left = 472.0
+offset_top = 216.0
+offset_right = 776.0
+offset_bottom = 336.0
+texture_normal = ExtResource("12_7v6wu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pause Layer/ColorRect/ButtonManager/Despause" unique_id=1272226876]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 120.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "[center][shake]Continuar"
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="Pause Layer/ColorRect/ButtonManager" unique_id=1400112697]
+material = SubResource("ShaderMaterial_ycfsi")
+layout_mode = 0
+offset_left = 472.0
+offset_top = 440.0
+offset_right = 776.0
+offset_bottom = 560.0
+texture_normal = ExtResource("12_7v6wu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pause Layer/ColorRect/ButtonManager/Quit" unique_id=2015311428]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 120.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "[center][shake]Sair"
+vertical_alignment = 1
+
+[node name="Info Layer" type="CanvasLayer" parent="." unique_id=1593710708]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Info Layer" unique_id=601728780]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.1764706, 0.1764706, 0.1764706, 0.78431374)
+
+[node name="TextBox" type="Sprite2D" parent="Info Layer/ColorRect" unique_id=1188759103]
+material = SubResource("ShaderMaterial_ycfsi")
+position = Vector2(640, 384)
+texture = ExtResource("12_7v6wu")
+
+[node name="CloseInfo" type="TextureButton" parent="Info Layer/ColorRect/TextBox" unique_id=2096774112]
+use_parent_material = true
+offset_left = 216.0
+offset_top = -160.0
+offset_right = 248.0
+offset_bottom = -120.0
+texture_normal = ExtResource("15_840mn")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="DescGame" type="RichTextLabel" parent="Info Layer/ColorRect/TextBox" unique_id=456277638]
+offset_left = -320.0
+offset_top = -192.0
+offset_right = 320.0
+offset_bottom = 192.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_lqagx")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Descrição do jogo"
+vertical_alignment = 1
 
 [connection signal="timeout" from="Beginning Timer" to="." method="_on_beginning_timer_timeout"]
 [connection signal="timeout" from="Starting Timer" to="." method="_on_starting_timer_timeout"]
 [connection signal="timeout" from="Transition Timer" to="." method="_on_transition_timer_timeout"]
+[connection signal="timeout" from="Ending Timer" to="." method="_on_ending_timer_timeout"]
+[connection signal="pressed" from="Button Layer/InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="Button Layer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Pause Layer/ColorRect/ButtonManager/Despause" to="." method="_on_despause_pressed"]
+[connection signal="pressed" from="Pause Layer/ColorRect/ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Info Layer/ColorRect/TextBox/CloseInfo" to="." method="_on_close_info_pressed"]

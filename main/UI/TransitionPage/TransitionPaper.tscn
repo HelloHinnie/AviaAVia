@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b50yjaq6prgk1"]
+
+[ext_resource type="SpriteFrames" uid="uid://c0nggj73c5ksy" path="res://assets/transitionPaper.tres" id="1_tpaper"]
+[ext_resource type="Script" uid="uid://dqhjdao7cb4lv" path="res://main/UI/TransitionPage/transition_paper.gd" id="2_script"]
+[ext_resource type="Shader" uid="uid://b878kn3jo2n7g" path="res://main/UI/TransitionPage/chroma_key.gdshader" id="3_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chroma"]
+shader = ExtResource("3_shader")
+shader_parameter/next_scene = null
+
+[node name="TransitionPaper" type="CanvasLayer"]
+layer = 128
+script = ExtResource("2_script")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1280, 720)
+render_target_update_mode = 3
+transparent_bg = true
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport"]
+position = Vector2(640, 360)
+enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_chroma")
+sprite_frames = ExtResource("1_tpaper")
+centered = true

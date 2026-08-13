@@ -10,6 +10,7 @@ var dragging := false
 var touch_offset := Vector2.ZERO
 var travado := false
 
+signal encaixado(win : bool) 
 
 func _ready() -> void:
 	start_position = cinto.Pa_Position
@@ -38,7 +39,6 @@ func _input(event: InputEvent) -> void:
 func _on_cinto_presilha_area_entered(area: Area2D) -> void:
 	if area == self:
 		travado = true
-		cinto.Locked = true
 		dragging = false
 		if get_parent().has_method("checkLocked"):
 			get_parent().checkLocked()
@@ -47,3 +47,4 @@ func _on_cinto_presilha_area_entered(area: Area2D) -> void:
 		else:
 			global_position = cinto_presilha.global_position - Vector2(15, 17)
 		cinto.set_point_position(1, global_position)
+		encaixado.emit()
