@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2j4kj6g3aemh" path="res://games/calce_certo/shoe.tscn" id="2_wt2e0"]
 [ext_resource type="PackedScene" uid="uid://dt5ovfyqguux3" path="res://games/aperte_os_cintos/TimerBar.tscn" id="9_iqc6p"]
 
-[sub_resource type="Shader" id="Shader_aektl"]
+[sub_resource type="Shader" id="Shader_wt2e0"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -70,9 +70,9 @@ void fragment() {
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qe15r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aektl"]
 resource_local_to_scene = true
-shader = SubResource("Shader_aektl")
+shader = SubResource("Shader_wt2e0")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 10.0
 shader_parameter/pattern = 0
@@ -82,13 +82,10 @@ shader_parameter/onoff = 0.0
 
 [node name="CalceCerto" type="Node2D" unique_id=939955278]
 script = ExtResource("1_roud6")
-shoe_timer = null
-shoe_density = null
-min_spacing = null
-max_spacing = null
 
 [node name="Shoe" parent="." unique_id=314445766 instance=ExtResource("2_wt2e0")]
-material = SubResource("ShaderMaterial_qe15r")
+visible = false
+material = SubResource("ShaderMaterial_aektl")
 position = Vector2(-23.999985, 56)
 
 [node name="ColorRect" parent="." unique_id=1428415499 node_paths=PackedStringArray("timer") instance=ExtResource("9_iqc6p")]
