@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvtrkipiamsob"
-path="res://.godot/imported/Gemini_Generated_Image_t54wwnt54wwnt54w (1).png-bed859f4f6c01a484f6dddf1949766ea.ctex"
+uid="uid://vc6cgeglu6rh"
+path="res://.godot/imported/smoke1.png-1b21fe85371bcde3f297eaa3e8dc1e42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://games/afivele/Gemini_Generated_Image_t54wwnt54wwnt54w (1).png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_t54wwnt54wwnt54w (1).png-bed859f4f6c01a484f6dddf1949766ea.ctex"]
+source_file="res://main/UI/TransitionPage/smoke1.png"
+dest_files=["res://.godot/imported/smoke1.png-1b21fe85371bcde3f297eaa3e8dc1e42.ctex"]
 
 [params]
 

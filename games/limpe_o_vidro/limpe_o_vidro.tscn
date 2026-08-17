@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://crnpbh6s5yts2"]
+
+[ext_resource type="Script" uid="uid://cfi4n5s4puyf4" path="res://games/limpe_o_vidro/limpe_o_vidro.gd" id="1_j2gd4"]
+[ext_resource type="Texture2D" uid="uid://b58j3vj2olroi" path="res://games/limpe_o_vidro/Gemini_Generated_Image_qjrvpxqjrvpxqjrv.png" id="2_yl2hp"]
+[ext_resource type="Texture2D" uid="uid://b41qxyil2ffsa" path="res://games/limpe_o_vidro/parabrisa.png" id="3_722u3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1280, 720)
+
+[node name="LimpeOVidro" type="Node2D" unique_id=561028898]
+script = ExtResource("1_j2gd4")
+
+[node name="limpo" type="Sprite2D" parent="." unique_id=1894578256]
+position = Vector2(640, 360)
+texture = ExtResource("2_yl2hp")
+
+[node name="sujo" type="Sprite2D" parent="." unique_id=449926865]
+modulate = Color(0.09803922, 0.09803922, 0.09803922, 0.9019608)
+position = Vector2(640, 360)
+texture = ExtResource("2_yl2hp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1760343514]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=66549683]
+position = Vector2(640, 360)
+shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="ParabrisaEsq" type="Sprite2D" parent="." unique_id=869891205]
+position = Vector2(448, 680)
+texture = ExtResource("3_722u3")
+offset = Vector2(0, -232)
+
+[node name="ParabrisaDir" type="Sprite2D" parent="." unique_id=645409188]
+position = Vector2(952, 680)
+texture = ExtResource("3_722u3")
+offset = Vector2(0, -232)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_vidro_input_event"]

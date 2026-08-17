@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_uqrmh")
+games = Array[String](["res://games/afivele/afivele.tscn", "res://games/aperte_os_cintos/AperteOsCintos.tscn", "res://games/freie/freie.tscn", "res://games/calce_certo/calce_certo.tscn"])
 metadata/_custom_type_script = "uid://4corkqrbcii4"

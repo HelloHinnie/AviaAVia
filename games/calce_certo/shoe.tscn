@@ -47,33 +47,35 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_iqc6p"]
 length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Shoe:rotation")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [-0.7853982]
 }
 
 [sub_resource type="Animation" id="Animation_kjpmb"]
 resource_name = "new_animation"
+length = 1.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Shoe:rotation")
-tracks/0/interp = 1
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [-0.7853981633974483, 0.0, 0.7853981633974483]
+"update": 0,
+"values": [0.7853981633974483, 0.0, -0.7853981633974483]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kahym"]
@@ -84,17 +86,20 @@ _data = {
 
 [node name="Shoe" type="AnimatedSprite2D" unique_id=314445766]
 material = SubResource("ShaderMaterial_m3s4b")
+rotation = -0.7853982
 scale = Vector2(0.34787238, 0.39379305)
 sprite_frames = SubResource("SpriteFrames_00c62")
 script = ExtResource("8_7ep7n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251265988]
-root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_kahym")
-autoplay = &"RESET"
+autoplay = &"new_animation"
 
 [node name="Button" type="Button" parent="." unique_id=400114896]
 offset_left = -206.97247
 offset_top = -162.52191
 offset_right = 252.96628
 offset_bottom = 182.83716
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

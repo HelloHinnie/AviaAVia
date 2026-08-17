@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlcg51qw7veqg"
-path="res://.godot/imported/Gemini_Generated_Image_s70cirs70cirs70c-Photoroom.png-5a752c23450249511f61f37bd06bf635.ctex"
+uid="uid://v0v5erywqyl0"
+path="res://.godot/imported/motoca.png-6fd926bf140f3e1f1b1a0e362a066b52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://games/afivele/Gemini_Generated_Image_s70cirs70cirs70c-Photoroom.png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_s70cirs70cirs70c-Photoroom.png-5a752c23450249511f61f37bd06bf635.ctex"]
+source_file="res://main/UI/TransitionPage/motoca.png"
+dest_files=["res://.godot/imported/motoca.png-6fd926bf140f3e1f1b1a0e362a066b52.ctex"]
 
 [params]
 

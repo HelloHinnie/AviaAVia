@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c8ytnyu8ayyv3"]
+
+[ext_resource type="Texture2D" uid="uid://dktqkoxiqkiki" path="res://main/UI/TransitionPage/preda.png" id="1_6r0w3"]
+[ext_resource type="Script" uid="uid://cowie2bpp4ips" path="res://main/UI/TransitionPage/preda.gd" id="2_ivnov"]
+
+[node name="Preda" type="Sprite2D" unique_id=945753463]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_6r0w3")
+script = ExtResource("2_ivnov")

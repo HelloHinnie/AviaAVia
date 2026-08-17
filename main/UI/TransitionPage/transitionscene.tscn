@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c5x044vbvtjmc"]
+
+[ext_resource type="Texture2D" uid="uid://vc6cgeglu6rh" path="res://main/UI/TransitionPage/smoke1.png" id="1_ib0dq"]
+[ext_resource type="Texture2D" uid="uid://ckve3c0gbkl6j" path="res://main/UI/chao.png" id="1_qn78l"]
+[ext_resource type="Texture2D" uid="uid://v0v5erywqyl0" path="res://main/UI/TransitionPage/motoca.png" id="2_1dndr"]
+[ext_resource type="Texture2D" uid="uid://bmtil126aaljj" path="res://main/UI/TransitionPage/smoke2.png" id="2_ymby3"]
+[ext_resource type="Script" uid="uid://c2l7e35lu85om" path="res://main/UI/TransitionPage/motorcycleAnimation.gd" id="3_ib0dq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ib0dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ymby3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymby3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1dndr")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ctbn7"]
+resource_name = "smoke"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6qv5"]
+_data = {
+&"smoke": SubResource("Animation_ctbn7")
+}
+
+[node name="Transitionscene" type="Node2D" unique_id=1827359594]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=271403011]
+position = Vector2(648, 488)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="Chao" type="Sprite2D" parent="." unique_id=1219752671]
+position = Vector2(640.25, 668)
+scale = Vector2(1.550909, 1)
+texture = ExtResource("1_qn78l")
+
+[node name="Motoca" type="AnimatedSprite2D" parent="." unique_id=1777031935]
+position = Vector2(656, 432)
+scale = Vector2(0.2916667, 0.2916667)
+sprite_frames = SubResource("SpriteFrames_ymby3")
+animation = &"new_animation"
+script = ExtResource("3_ib0dq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1012180793]
+libraries/ = SubResource("AnimationLibrary_h6qv5")
+autoplay = &"smoke"

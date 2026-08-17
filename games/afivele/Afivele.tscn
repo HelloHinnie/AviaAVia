@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://8vqkae37nmvb"]
 
 [ext_resource type="Script" uid="uid://d1sptw23pp2re" path="res://games/afivele/afivele.gd" id="1_hahkm"]
-[ext_resource type="Texture2D" uid="uid://dlcg51qw7veqg" path="res://games/afivele/Gemini_Generated_Image_s70cirs70cirs70c-Photoroom.png" id="2_m3ffb"]
 [ext_resource type="PackedScene" uid="uid://dt5ovfyqguux3" path="res://games/aperte_os_cintos/TimerBar.tscn" id="4_bb0ik"]
 [ext_resource type="Texture2D" uid="uid://dtf46qehauxfj" path="res://games/afivele/rect1.png" id="4_m3ffb"]
 
@@ -18,12 +17,6 @@ radius = 75.29119
 script = ExtResource("1_hahkm")
 title = "Afivele!"
 desc = "Feche o capacete!"
-
-[node name="GeminiGeneratedImageS70Cirs70Cirs70cPhotoroom" type="Sprite2D" parent="." unique_id=1538675687]
-z_index = -1
-position = Vector2(616.00006, 1264)
-scale = Vector2(1.5895833, 1.5895833)
-texture = ExtResource("2_m3ffb")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=2105314961]
 position = Vector2(-8.000061, 560)

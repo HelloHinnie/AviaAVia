@@ -31,7 +31,7 @@ var scoreTween
 var speedTween
 
 #Moto
-@onready var motoca: AnimatedSprite2D = $Motoca
+@onready var motoca: AnimatedSprite2D = $"Transition Layer/Motoca"
 
 # Speed related stuff
 @export var timerMultiplier : float = 1.0

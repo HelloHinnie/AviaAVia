@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://damvp03ayiiwm"
-path="res://.godot/imported/NOAKABES TEXTURE  (4).jpg-4e59a73a916a33acd17c193ed43e0546.ctex"
+uid="uid://6uf70wl1lfnv"
+path="res://.godot/imported/chao.png-e258d615569b020861caff9355b1682a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/UI/TransitionPage/NOAKABES TEXTURE  (4).jpg"
-dest_files=["res://.godot/imported/NOAKABES TEXTURE  (4).jpg-4e59a73a916a33acd17c193ed43e0546.ctex"]
+source_file="res://chao.png"
+dest_files=["res://.godot/imported/chao.png-e258d615569b020861caff9355b1682a.ctex"]
 
 [params]
 

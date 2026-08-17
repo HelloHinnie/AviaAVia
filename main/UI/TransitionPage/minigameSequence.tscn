@@ -8,8 +8,6 @@
 [ext_resource type="Script" uid="uid://btlwogyag4poj" path="res://main/UI/TransitionPage/rotate_icon.gd" id="4_8vovd"]
 [ext_resource type="Texture2D" uid="uid://cy10y71mwurkx" path="res://main/assets/sprites/lifes/moon.svg" id="4_87mt6"]
 [ext_resource type="Shader" uid="uid://njxh0cdmo6x6" path="res://main/UI/TransitionPage/grey.gdshader" id="4_ltuv3"]
-[ext_resource type="Texture2D" uid="uid://dkl2abhniaqdu" path="res://main/UI/TransitionPage/Gemini_Generated_Image_wbr7gkwbr7gkwbr7 (1).png" id="5_ggk07"]
-[ext_resource type="Script" uid="uid://c2l7e35lu85om" path="res://main/UI/TransitionPage/motorcycleAnimation.gd" id="5_lqagx"]
 [ext_resource type="Texture2D" uid="uid://cw4n62we1hucm" path="res://main/UI/TransitionPage/path25-2.png" id="9_0f5oc"]
 [ext_resource type="Shader" uid="uid://c3cwk8p5u5wjj" path="res://main/Xilo.gdshader" id="9_lvii4"]
 [ext_resource type="Texture2D" uid="uid://dy5il2fu8rl01" path="res://main/UI/TransitionPage/layer1-5.png" id="10_rp7r1"]
@@ -35,17 +33,6 @@ shader = ExtResource("4_ltuv3")
 shader_parameter/brightness = 0.75
 shader_parameter/contrast = 2.0
 shader_parameter/saturation = 0.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ggk07"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_ggk07")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="Animation" id="Animation_rp7r1"]
 resource_name = "FadeIn"
@@ -397,13 +384,6 @@ mouse_filter = 2
 
 [node name="Transition Layer" type="CanvasLayer" parent="." unique_id=1000011535]
 layer = 3
-
-[node name="Motoca" type="AnimatedSprite2D" parent="Transition Layer" unique_id=168218642]
-visible = false
-position = Vector2(616, 384)
-scale = Vector2(0.2916667, 0.2916667)
-sprite_frames = SubResource("SpriteFrames_ggk07")
-script = ExtResource("5_lqagx")
 
 [node name="Animator" type="AnimationPlayer" parent="Transition Layer" unique_id=654805926]
 libraries/ = SubResource("AnimationLibrary_lvii4")
