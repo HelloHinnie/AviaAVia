@@ -1,5 +1,10 @@
 extends Node2D
 
+@export var win = false
+signal send_results(win : bool) 
+@export var title : String
+@export var desc : String
+
 @export var drag_necessario : float = 10000
 var limpeza_acumulada : float = 0.0
 
@@ -76,4 +81,5 @@ func atualizar_limpeza():
 		venceu_minigame()
 
 func venceu_minigame():
-	print("Vidro limpo! Você ganhou!")
+	send_results.emit(true)
+	$Timer.stop()

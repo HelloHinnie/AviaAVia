@@ -3,12 +3,19 @@
 [ext_resource type="Script" uid="uid://cfi4n5s4puyf4" path="res://games/limpe_o_vidro/limpe_o_vidro.gd" id="1_j2gd4"]
 [ext_resource type="Texture2D" uid="uid://b58j3vj2olroi" path="res://games/limpe_o_vidro/Gemini_Generated_Image_qjrvpxqjrvpxqjrv.png" id="2_yl2hp"]
 [ext_resource type="Texture2D" uid="uid://b41qxyil2ffsa" path="res://games/limpe_o_vidro/parabrisa.png" id="3_722u3"]
+[ext_resource type="PackedScene" uid="uid://dt5ovfyqguux3" path="res://games/aperte_os_cintos/TimerBar.tscn" id="4_elcw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1280, 720)
 
 [node name="LimpeOVidro" type="Node2D" unique_id=561028898]
 script = ExtResource("1_j2gd4")
+title = "Limpe o Vidro!"
+
+[node name="ColorRect" parent="." unique_id=1428415499 node_paths=PackedStringArray("timer") instance=ExtResource("4_elcw3")]
+z_index = 1
+position = Vector2(0, 704)
+timer = NodePath("../Timer")
 
 [node name="limpo" type="Sprite2D" parent="." unique_id=1894578256]
 position = Vector2(640, 360)
@@ -35,5 +42,9 @@ offset = Vector2(0, -232)
 position = Vector2(952, 680)
 texture = ExtResource("3_722u3")
 offset = Vector2(0, -232)
+
+[node name="Timer" type="Timer" parent="." unique_id=1994297289]
+wait_time = 10.0
+autostart = true
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_vidro_input_event"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bch47tvs2ma0y"]
+
+[ext_resource type="Script" uid="uid://lbu6l81b2qhj" path="res://games/deixe_passar/deixe_passar.gd" id="1_o01g5"]
+[ext_resource type="PackedScene" uid="uid://dt5ovfyqguux3" path="res://games/aperte_os_cintos/TimerBar.tscn" id="2_ac6h4"]
+
+[node name="DeixePassar" type="Node2D" unique_id=1891048923]
+script = ExtResource("1_o01g5")
+title = "Sai da Pista!"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1272038950]
+position = Vector2(1408, 384)
+
+[node name="Timer" type="Timer" parent="." unique_id=576090447]
+wait_time = 10.0
+autostart = true
+
+[node name="ColorRect" parent="." unique_id=1428415499 node_paths=PackedStringArray("timer") instance=ExtResource("2_ac6h4")]
+position = Vector2(0, 704)
+timer = NodePath("../Timer")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

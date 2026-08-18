@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://i8gj2v88dpud"]
+
+[ext_resource type="Script" uid="uid://i7nrvdffnb2b" path="res://games/deixe_passar/animal.gd" id="1_5squ5"]
+[ext_resource type="Texture2D" uid="uid://bo4vpglsq5ogn" path="res://games/freie/path100.svg" id="1_hu77j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(392, 376)
+
+[node name="Animal" type="Area2D" unique_id=1190056328]
+script = ExtResource("1_5squ5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1066360110]
+texture = ExtResource("1_hu77j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=537434384]
+position = Vector2(-4, -4)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1244626731]
+rect = Rect2(-200, -192, 392, 376)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
