@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dxhnf3gpcoxtd"]
+
+[ext_resource type="Script" uid="uid://bndyfsa02pd2v" path="res://games/acompanha_o_transito/acompanhe_o_transito.gd" id="1_q7p0f"]
+[ext_resource type="PackedScene" uid="uid://7iw34by28xv3" path="res://games/acompanha_o_transito/carro_npc.tscn" id="2_1c1sp"]
+[ext_resource type="Texture2D" uid="uid://b4abejm7jooft" path="res://games/freie/freio.png" id="3_8bciv"]
+[ext_resource type="Script" uid="uid://d24tqewuvy8m6" path="res://games/acompanha_o_transito/carro_jogador.gd" id="3_pqmrd"]
+[ext_resource type="PackedScene" uid="uid://dt5ovfyqguux3" path="res://games/aperte_os_cintos/TimerBar.tscn" id="4_1c1sp"]
+[ext_resource type="Texture2D" uid="uid://t5uxceijjbm5" path="res://games/freie/image1.png" id="5_pqmrd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqmrd"]
+size = Vector2(189.33762, 273.48776)
+
+[node name="AcompanheOTransito" type="Node2D" unique_id=1372812990]
+script = ExtResource("1_q7p0f")
+title = "Segue o fluxo!!"
+desc = "Acompanhe o ritmo dos carros no engarrafamento! Não Bata!"
+
+[node name="CharacterBody2D" parent="." unique_id=325370857 instance=ExtResource("2_1c1sp")]
+script = ExtResource("3_pqmrd")
+aceleracao = 700.0
+forca_do_freio = 900.0
+velocidade_maxima = -450.0
+
+[node name="freio" type="Sprite2D" parent="." unique_id=1696715635]
+position = Vector2(96.00001, 600.00006)
+scale = Vector2(0.95068204, 0.950682)
+texture = ExtResource("3_8bciv")
+offset = Vector2(8.0651245, 8.988525)
+
+[node name="Area2D" type="Area2D" parent="freio" unique_id=817559375]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="freio/Area2D" unique_id=646460455]
+position = Vector2(8.415007, 8.41498)
+scale = Vector2(1.0000007, 1.0000007)
+shape = SubResource("RectangleShape2D_pqmrd")
+
+[node name="acelerador" type="Sprite2D" parent="." unique_id=604268831]
+position = Vector2(288, 552.00006)
+scale = Vector2(0.95068204, 0.950682)
+texture = ExtResource("5_pqmrd")
+offset = Vector2(8.0651245, 8.988525)
+
+[node name="Area2D" type="Area2D" parent="acelerador" unique_id=200866183]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="acelerador/Area2D" unique_id=966869345]
+position = Vector2(6.31131, 6.311035)
+scale = Vector2(1.0000007, 1.0000007)
+shape = SubResource("RectangleShape2D_pqmrd")
+
+[node name="Timer" type="Timer" parent="." unique_id=99825380]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="EndTimer" type="Timer" parent="." unique_id=1106004757]
+
+[node name="ColorRect2" parent="." unique_id=1428415499 node_paths=PackedStringArray("timer") instance=ExtResource("4_1c1sp")]
+position = Vector2(0, 704)
+timer = NodePath("../Timer")

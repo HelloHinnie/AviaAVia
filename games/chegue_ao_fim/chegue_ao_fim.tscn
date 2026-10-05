@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://p5yyxrpkfht7"]
+
+[ext_resource type="Script" uid="uid://7jkgbm8stqdq" path="res://games/chegue_ao_fim/chegue_ao_fim.gd" id="1_2eqbh"]
+[ext_resource type="Script" uid="uid://dejs7wfk4tvkr" path="res://games/chegue_ao_fim/car.gd" id="2_fpok3"]
+[ext_resource type="PackedScene" uid="uid://dt5ovfyqguux3" path="res://games/aperte_os_cintos/TimerBar.tscn" id="3_fpok3"]
+
+[node name="ChegueAoFim" type="Node2D" unique_id=2063035556]
+script = ExtResource("1_2eqbh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=314670989]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=965213855]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1261501317]
+script = ExtResource("2_fpok3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1739531014]
+
+[node name="Timer" type="Timer" parent="." unique_id=1153414008]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="EndTimer" type="Timer" parent="." unique_id=1645424236]
+
+[node name="ColorRect2" parent="." unique_id=1428415499 node_paths=PackedStringArray("timer") instance=ExtResource("3_fpok3")]
+position = Vector2(0, 704)
+timer = NodePath("../Timer")

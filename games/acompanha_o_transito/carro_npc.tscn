@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://7iw34by28xv3"]
+
+[ext_resource type="Script" uid="uid://bgwejukttxybc" path="res://games/acompanha_o_transito/carro_npc.gd" id="1_75ybr"]
+[ext_resource type="Texture2D" uid="uid://cldqhiw5544kq" path="res://games/freie/carro.png" id="2_8roqq"]
+[ext_resource type="Texture2D" uid="uid://65n57pqmux2x" path="res://games/freie/roda.png" id="3_xwplp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(352, 144)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=325370857]
+script = ExtResource("1_75ybr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1796401967]
+position = Vector2(0.97774696, -3.499985)
+scale = Vector2(0.46917787, 0.4691779)
+texture = ExtResource("2_8roqq")
+
+[node name="roda1" type="Sprite2D" parent="Sprite2D" unique_id=942001642]
+position = Vector2(-238.66833, 99.1095)
+texture = ExtResource("3_xwplp")
+
+[node name="roda2" type="Sprite2D" parent="Sprite2D" unique_id=478765111]
+position = Vector2(264.33936, 99.10953)
+texture = ExtResource("3_xwplp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=589797982]
+shape = SubResource("RectangleShape2D_g4v7s")

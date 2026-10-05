@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct0bdspj1if3c"
-path="res://.godot/imported/ezgif-frame-015.jpg-51a44b9d276b1559dfa847c00aed4f26.ctex"
+uid="uid://dog77xgxbc133"
+path="res://.godot/imported/bitmap.png-7efc33a9269657cdcfac61d4aab8c95d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TransitionPaper/ezgif-frame-015.jpg"
-dest_files=["res://.godot/imported/ezgif-frame-015.jpg-51a44b9d276b1559dfa847c00aed4f26.ctex"]
+source_file="res://main/bitmap.png"
+dest_files=["res://.godot/imported/bitmap.png-7efc33a9269657cdcfac61d4aab8c95d.ctex"]
 
 [params]
 

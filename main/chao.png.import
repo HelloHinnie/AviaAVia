@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6uf70wl1lfnv"
-path="res://.godot/imported/chao.png-e258d615569b020861caff9355b1682a.ctex"
+uid="uid://ckve3c0gbkl6j"
+path="res://.godot/imported/chao.png-a025d989003754857ba3abf71ba81ac3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://chao.png"
-dest_files=["res://.godot/imported/chao.png-e258d615569b020861caff9355b1682a.ctex"]
+source_file="res://main/chao.png"
+dest_files=["res://.godot/imported/chao.png-a025d989003754857ba3abf71ba81ac3.ctex"]
 
 [params]
 
